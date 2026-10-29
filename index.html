@@ -161,6 +161,25 @@ details.q.done .qn::after { content: " ✓"; color: var(--stem); }
 .q-body .opener { background: var(--ground); border-radius: 8px; padding: .75rem .9rem; font-style: italic; }
 .q-body label { font-family: var(--ui); font-size: .88rem; display: inline-flex; gap: .45rem; align-items: center; cursor: pointer; color: var(--ink-soft); }
 
+/* Thank-you email tabs */
+.followup { background: var(--surface); }
+.tablist { display: flex; gap: .25rem; overflow-x: auto; border-bottom: 1px solid var(--rule); scrollbar-width: none; }
+.tablist::-webkit-scrollbar { display: none; }
+.tab { flex: none; font-family: var(--ui); font-weight: 600; font-size: .92rem; padding: .6rem .9rem; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--ink-soft); cursor: pointer; margin-bottom: -1px; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--fireweed); border-bottom-color: var(--fireweed); }
+.tab:focus-visible { outline: 2px solid var(--fireweed); outline-offset: -2px; }
+.panel { padding-top: 1.2rem; display: grid; gap: .9rem; }
+.panel-note { font-size: .93rem; color: var(--ink-soft); }
+.email { border: 1px solid var(--rule); border-radius: 10px; background: var(--ground); overflow: hidden; }
+.email-head { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between; padding: .7rem 1rem; border-bottom: 1px solid var(--rule); font-family: var(--ui); font-size: .9rem; }
+.email-head b { font-weight: 600; color: var(--ink-soft); margin-right: .35rem; }
+.email-body { padding: 1.1rem 1.2rem; display: grid; gap: .8rem; font-size: 1rem; }
+.email-body ul { display: grid; gap: .4rem; }
+.email-body li + li { margin-top: 0; }
+.ph { background: var(--ember-tint); color: var(--ember); border-radius: 3px; padding: 0 .2rem; }
+.copied { font-family: var(--ui); font-size: .82rem; color: var(--stem); }
+
 /* Checklist */
 ul.check { list-style: none; padding: 0; display: grid; gap: .5rem; }
 ul.check li { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: .7rem .9rem; }
@@ -176,6 +195,7 @@ footer { padding-block: 2rem 3rem; border-top: 1px solid var(--rule); font-size:
 
 <nav class="nav" aria-label="Sections">
   <div class="wrap wide nav-inner">
+    <a href="#thank-you">Thank-you email</a>
     <a href="#snapshot">Snapshot</a>
     <a href="#connections">Connections</a>
     <a href="#fit">Fit</a>
@@ -212,6 +232,106 @@ footer { padding-block: 2rem 3rem; border-top: 1px solid var(--rule); font-size:
 </header>
 
 <main>
+
+<!-- THANK-YOU EMAIL -->
+<section id="thank-you" class="followup">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">After the interview · Renée Monchalin &amp; Anita Benoit</span>
+      <h2>Thank-you email drafts</h2>
+      <p>Built from your debrief. Every version thanks them for the extra time, names what excites you about Phase 2, answers their one doubt (owning a project start to finish) with proof, and confirms the mid-November start. Pick one, make it sound like you, and send it within 24 hours.</p>
+    </div>
+
+    <div class="stack" style="margin-bottom:1.6rem">
+      <div class="callout stem">
+        <h3>What these emails do</h3>
+        <ul>
+          <li><b>Answer the doubt.</b> Your strongest start-to-finish projects: moving the TRCC crisis line online, the CaseWORKS rollout, and your master's research through to a published chapter.</li>
+          <li><b>Add to the REB answer.</b> One or two sentences that make your weakest answer more concrete, without sounding defensive.</li>
+          <li><b>Echo what they told you.</b> The national hotline, the Call Auntie expansion, a team that started in September, and the in-person planning meeting.</li>
+          <li><b>Leave out on purpose:</b> salary (wait for the offer; Renée already pointed to the top of the range), childcare details, and anything about anyone's leave.</li>
+        </ul>
+      </div>
+      <p class="small muted">Send to Renée at renee.monchalin@mail.utoronto.ca. Dr. Anita C. Benoit is an Assistant Professor at U of T Scarborough (Health &amp; Society), cross-appointed to Dalla Lana, and Mi'kmaw and French Acadian. Her university email is on her <a href="https://www.utsc.utoronto.ca/healthsociety/anita-benoit" target="_blank" rel="noopener">UTSC profile</a>, so you can cc her or use the separate note. <span class="ph">Highlighted text</span> is optional or for you to fill in.</p>
+    </div>
+
+    <div class="tablist" role="tablist" aria-label="Email versions">
+      <button class="tab" role="tab" type="button" id="tab-warm" aria-controls="panel-warm" aria-selected="true">Warm &amp; relational</button>
+      <button class="tab" role="tab" type="button" id="tab-proof" aria-controls="panel-proof" aria-selected="false" tabindex="-1">Answers the concern</button>
+      <button class="tab" role="tab" type="button" id="tab-short" aria-controls="panel-short" aria-selected="false" tabindex="-1">Short &amp; sweet</button>
+      <button class="tab" role="tab" type="button" id="tab-anita" aria-controls="panel-anita" aria-selected="false" tabindex="-1">Note to Anita</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-warm" aria-labelledby="tab-warm">
+      <p class="panel-note">Best if you want the relationship to lead. Uses first names, tells the full-circle story of the grant, and works the start-to-finish proof in gently.</p>
+      <div class="email">
+        <div class="email-head"><span><b>Subject</b>Thank you, and so excited about Phase 2</span><span><button class="btn copy" type="button" data-target="body-warm">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
+        <div class="email-body" id="body-warm">
+          <p>Dear Renée and Anita,</p>
+          <p>Thank you both for your time today, and for letting our conversation run over. Hearing how Phase 2 is taking shape left me even more excited about this role.</p>
+          <p>A few things have stayed with me since we spoke:</p>
+          <ul>
+            <li><b>Coming full circle.</b> I was part of the back-and-forth on the grant submission when I was at Action Canada. Seeing that work become a national hotline and the national expansion of Call Auntie means a lot, and I would love to help build what we hoped for then.</li>
+            <li><b>Reconnecting with partners.</b> I got to know folks at Action Canada, Abortion Care Canada and the SOGC through the CART Access Project. I'd love to bring those relationships into the partnership work, and to keep working alongside my Call Auntie team.</li>
+            <li><b>Building the infrastructure.</b> Setting things up from the beginning is where I do my best work. I start from the outcome we want and work backwards to the time, money, skills, systems and relationships it will take, because we can't expect things from people without giving them the resources to do them.</li>
+          </ul>
+          <p>Renée, I appreciated what you said about coming into work that is already in motion. I've done that, and I've also carried projects from start to finish: redesigning the TRCC crisis line training and moving a low-tech team onto Zoom and Slack within two weeks when the pandemic hit, leading the CaseWORKS rollout at Call Auntie from configuration through training and now the update, and taking my master's research from design and ethics approval to a published chapter.</p>
+          <p>I'm ready to start in mid-November as we discussed, and I'd be glad to help plan the in-person gathering to kick off Phase 2.</p>
+          <p>Thank you again. I look forward to hearing from you.</p>
+          <p>Warmly,<br>Laura Salamanca<br>she/her/they/them</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-proof" aria-labelledby="tab-proof" hidden>
+      <p class="panel-note">Best if you want to close the gap on the start-to-finish question and the REB answer. More formal, built around specific proof. Good if Anita is cc'd, since she knows you less well.</p>
+      <div class="email">
+        <div class="email-head"><span><b>Subject</b>Thank you: Research Coordinator III</span><span><button class="btn copy" type="button" data-target="body-proof">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
+        <div class="email-body" id="body-proof">
+          <p>Dear Dr. Monchalin and Dr. Benoit,</p>
+          <p>Thank you for taking the time to speak with me today, and for the extra time we took. Hearing how Phase 2 of Fireweed is coming together, with the national hotline, the national expansion of Call Auntie, and a team that started in September, made me even more certain this is the right next step for me.</p>
+          <p>You asked about seeing a project through from beginning to end, and I want to add to my answer. Some of the work I'm proudest of was mine from start to finish:</p>
+          <ul>
+            <li><b>Toronto Rape Crisis Centre.</b> When the pandemic hit, I gave myself two weeks to redesign more than 52 hours of volunteer training for online delivery and to move a low-tech team onto Zoom and Slack. Over the next two years the crisis line went from struggling to a program people were deeply invested in, with training booked months in advance.</li>
+            <li><b>Call Auntie.</b> I configured our new case management system, CaseWORKS, wrote the guides, trained the team, and I'm now leading its update.</li>
+            <li><b>My master's research.</b> I designed the study, took it through ethics review, collected and coded the data by hand, and published it as a chapter in <i>Abortion: History, Politics, and Reproductive Justice after Morgentaler</i>.</li>
+          </ul>
+          <p>On research ethics, taking my own study through review taught me that a clear, complete submission saves weeks of back-and-forth with the board. I'd bring that care to our REB work, alongside the data governance agreements our Indigenous partners need. <span class="ph">[Optional, only if true: I've also completed TCPS 2 CORE-2022.]</span></p>
+          <p>What excites me most is building the infrastructure for Phase 2 from the beginning. I work backwards from the outcomes we want to the time, money, skills, systems and relationships needed to get there. I'm also looking forward to reconnecting with colleagues at Action Canada, Abortion Care Canada and the SOGC from the CART Access Project, and to continuing to work alongside the Call Auntie team.</p>
+          <p>I'm available to start in mid-November, as we discussed. Thank you again for such a generous conversation.</p>
+          <p>Warmly,<br>Laura Salamanca<br>she/her/they/them</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-short" aria-labelledby="tab-short" hidden>
+      <p class="panel-note">Best if the interview already said it all and you want a quick, confident note. About 150 words.</p>
+      <div class="email">
+        <div class="email-head"><span><b>Subject</b>Thank you, Renée and Anita</span><span><button class="btn copy" type="button" data-target="body-short">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
+        <div class="email-body" id="body-short">
+          <p>Dear Renée and Anita,</p>
+          <p>Thank you for a wonderful conversation today, and for the extra time. I left even more excited about Phase 2.</p>
+          <p>Building the infrastructure for something new is where I do my best work, whether that was moving the TRCC crisis line online in two weeks, rolling out CaseWORKS at Call Auntie, or taking my own research from design to publication. I'd love to bring that to the national hotline and the Call Auntie expansion, and to reconnect with the partners at Action Canada, Abortion Care Canada and the SOGC I worked with on the CART Access Project.</p>
+          <p>It would mean a lot to help bring to life the work we started on the grant together. I'm ready to start in mid-November as we discussed.</p>
+          <p>Warmly,<br>Laura Salamanca<br>she/her/they/them</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-anita" aria-labelledby="tab-anita" hidden>
+      <p class="panel-note">Optional, sent separately if you don't cc Anita on the main email. She doesn't know you yet and seemed reserved, so this note is about her and keeps it brief.</p>
+      <div class="email">
+        <div class="email-head"><span><b>Subject</b>Thank you for today</span><span><button class="btn copy" type="button" data-target="body-anita">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
+        <div class="email-body" id="body-anita">
+          <p>Dear Dr. Benoit,</p>
+          <p>Thank you for joining the interview today and for your thoughtful questions. I especially valued talking through how to respond when trust breaks down on a diverse team. Separating what's interpersonal from what's systemic, and then holding people accountable, is work I've done in anti-oppression training at the Toronto Rape Crisis Centre and in teaching Social Justice in Midwifery at TMU. Your question reminded me how much this work depends on a team where everyone feels safe.</p>
+          <p>I'm excited about the chance to help build Fireweed's Phase 2, and I hope our paths cross again whatever the outcome.</p>
+          <p>Warmly,<br>Laura Salamanca<br>she/her/they/them</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONNECTIONS -->
 <section id="connections">
@@ -803,6 +923,44 @@ const QUESTIONS = [
   document.querySelectorAll("#checklist-items input").forEach((box) => {
     box.checked = !!ck[box.id];
     box.addEventListener("change", () => { ck[box.id] = box.checked; write(CK, ck); });
+  });
+})();
+
+(function () {
+  const tabs = Array.from(document.querySelectorAll('.tablist [role="tab"]'));
+  function select(tab) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => select(t));
+    t.addEventListener("keydown", (e) => {
+      const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!d) return;
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      select(next); next.focus(); e.preventDefault();
+    });
+  });
+
+  document.querySelectorAll(".copy").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const body = document.getElementById(btn.dataset.target);
+      const subject = btn.closest(".email-head").querySelector("span").textContent.replace(/^Subject/, "Subject: ");
+      const text = subject + "\n\n" + body.innerText.trim();
+      const status = btn.nextElementSibling;
+      const fallback = () => {
+        const r = document.createRange(); r.selectNodeContents(body);
+        const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        status.textContent = "Selected. Press Ctrl/Cmd+C to copy.";
+      };
+      try {
+        navigator.clipboard.writeText(text).then(() => { status.textContent = "Copied"; }, fallback);
+      } catch (e) { fallback(); }
+    });
   });
 })();
 </script>
