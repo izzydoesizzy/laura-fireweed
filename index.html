@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Laura × Fireweed Interview Prep</title>
+<meta name="description" content="Interview prep for Laura Salamanca: Research Coordinator III, The Fireweed Project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Familjen+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: one reading column under a sticky section nav; long-form sections, question cards that expand. */
+:root {
+  --ground: #f2f4ef;       /* pale meadow after a burn */
+  --surface: #ffffff;
+  --ink: #1d2b23;          /* deep spruce */
+  --ink-soft: #4a5a50;
+  --rule: #d5dccf;
+  --fireweed: #a8285f;     /* fireweed bloom */
+  --fireweed-tint: #f6e4ec;
+  --stem: #3f6b4f;         /* stem green */
+  --stem-tint: #e1ece3;
+  --ember: #b5651d;
+  --ember-tint: #f6ead9;
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --ui: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --col: 46rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #141b17; --surface: #1c2520; --ink: #e6ece6; --ink-soft: #a9b7ad; --rule: #2f3b34;
+    --fireweed: #e77fac; --fireweed-tint: #3a1f2c; --stem: #8fc3a0; --stem-tint: #1f3327;
+    --ember: #e3a467; --ember-tint: #3a2a19; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #141b17; --surface: #1c2520; --ink: #e6ece6; --ink-soft: #a9b7ad; --rule: #2f3b34;
+  --fireweed: #e77fac; --fireweed-tint: #3a1f2c; --stem: #8fc3a0; --stem-tint: #1f3327;
+  --ember: #e3a467; --ember-tint: #3a2a19; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--fireweed); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--fireweed); outline-offset: 2px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.2; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0; }
+ul { margin: 0; padding-left: 1.2rem; }
+li + li { margin-top: .35rem; }
+.eyebrow { font-family: var(--ui); font-weight: 600; font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; color: var(--fireweed); }
+.muted { color: var(--ink-soft); }
+.small { font-size: .9rem; }
+
+.wrap { max-width: var(--col); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wide { max-width: 64rem; }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--ground) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.nav-inner { display: flex; gap: .25rem; overflow-x: auto; scrollbar-width: none; padding-block: .55rem; }
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav a { flex: none; font-family: var(--ui); font-weight: 500; font-size: .88rem; color: var(--ink-soft); text-decoration: none; padding: .3rem .6rem; border-radius: 999px; }
+.nav a:hover { color: var(--ink); background: var(--stem-tint); }
+
+/* Hero */
+header.hero { padding-block: 3.5rem 2.5rem; }
+.hero .wrap { display: grid; gap: 1.1rem; }
+.hero h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); }
+.hero h1 em { font-style: normal; color: var(--fireweed); }
+.hero .lede { font-size: 1.2rem; max-width: 38rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: .75rem; }
+.fact { background: var(--surface); padding: .8rem 1rem; display: grid; gap: .1rem; }
+.fact dt { font-family: var(--ui); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); }
+.fact dd { margin: 0; font-family: var(--ui); font-weight: 600; font-size: 1rem; font-variant-numeric: tabular-nums; }
+
+/* Sections */
+section { padding-block: 3rem; border-top: 1px solid var(--rule); }
+.section-head { display: grid; gap: .5rem; margin-bottom: 1.6rem; }
+.section-head p { max-width: 40rem; color: var(--ink-soft); }
+.stack { display: grid; gap: 1rem; }
+
+/* Connections */
+.links { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.link-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; display: grid; gap: .5rem; align-content: start; min-width: 0; }
+.link-card h3 { font-size: 1.12rem; }
+.link-card .use { font-size: .93rem; border-top: 1px dashed var(--rule); padding-top: .55rem; }
+.link-card .use b { font-family: var(--ui); font-weight: 600; color: var(--stem); }
+.key { border-color: var(--fireweed); box-shadow: 0 0 0 1px var(--fireweed) inset; }
+
+/* Callout */
+.callout { background: var(--fireweed-tint); border-radius: 10px; padding: 1.2rem 1.3rem; display: grid; gap: .5rem; }
+.callout.stem { background: var(--stem-tint); }
+.callout.ember { background: var(--ember-tint); }
+.callout h3 { font-size: 1.15rem; }
+
+/* Fit table */
+.table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: .95rem; }
+th, td { text-align: left; vertical-align: top; padding: .75rem .9rem; border-bottom: 1px solid var(--rule); }
+th { font-family: var(--ui); font-weight: 600; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); background: var(--ground); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; width: 30%; }
+.pill { display: inline-block; font-family: var(--ui); font-weight: 600; font-size: .75rem; padding: .12rem .55rem; border-radius: 999px; white-space: nowrap; }
+.pill.strong { background: var(--stem-tint); color: var(--stem); }
+.pill.solid { background: var(--fireweed-tint); color: var(--fireweed); }
+.pill.build { background: var(--ember-tint); color: var(--ember); }
+.verify { font-family: var(--ui); font-size: .72rem; font-weight: 600; color: var(--ember); border: 1px solid currentColor; border-radius: 4px; padding: 0 .3rem; margin-left: .25rem; white-space: nowrap; }
+
+/* Pitch */
+blockquote.pitch { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.4rem 1.5rem; font-size: 1.08rem; display: grid; gap: .8rem; }
+
+/* Story bank */
+.stories { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.story { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; display: grid; gap: .35rem; align-content: start; }
+.story h3 { font-size: 1.05rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .2rem; }
+.tag { font-family: var(--ui); font-size: .72rem; font-weight: 500; padding: .08rem .45rem; border-radius: 4px; background: var(--ground); color: var(--ink-soft); border: 1px solid var(--rule); }
+
+/* Timeline (a real sequence) */
+ol.timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+ol.timeline li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--rule); margin: 0; }
+ol.timeline li:last-child { border-bottom: 0; }
+.yr { font-family: var(--ui); font-weight: 700; color: var(--fireweed); font-variant-numeric: tabular-nums; }
+
+/* People */
+.people { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.person { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; display: grid; gap: .3rem; align-content: start; }
+.person .role { font-family: var(--ui); font-size: .85rem; font-weight: 600; color: var(--stem); }
+
+/* Questions */
+.q-tools { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.btn { font-family: var(--ui); font-weight: 600; font-size: .88rem; padding: .45rem .9rem; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; }
+.btn:hover { border-color: var(--fireweed); color: var(--fireweed); }
+.progress { font-family: var(--ui); font-size: .9rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.q-group { display: grid; gap: .6rem; margin-top: 2rem; }
+.q-group:first-of-type { margin-top: 0; }
+.q-group > h3 { font-size: 1.35rem; margin-bottom: .2rem; }
+details.q { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+details.q[open] { border-color: var(--fireweed); }
+details.q summary { list-style: none; cursor: pointer; padding: .9rem 1.1rem; display: grid; grid-template-columns: auto 1fr auto; gap: .8rem; align-items: baseline; }
+details.q summary::-webkit-details-marker { display: none; }
+.qn { font-family: var(--ui); font-weight: 700; font-size: .85rem; color: var(--fireweed); font-variant-numeric: tabular-nums; }
+.qt { font-family: var(--body); font-weight: 600; }
+.chev { font-family: var(--ui); color: var(--ink-soft); transition: transform .2s; }
+details.q[open] .chev { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+details.q.done .qt { color: var(--ink-soft); }
+details.q.done .qn::after { content: " ✓"; color: var(--stem); }
+.q-body { padding: 0 1.1rem 1.1rem; display: grid; gap: .9rem; }
+.q-body h4 { font-family: var(--ui); font-weight: 600; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--stem); margin: 0 0 .25rem; }
+.q-body .opener { background: var(--ground); border-radius: 8px; padding: .75rem .9rem; font-style: italic; }
+.q-body label { font-family: var(--ui); font-size: .88rem; display: inline-flex; gap: .45rem; align-items: center; cursor: pointer; color: var(--ink-soft); }
+
+/* Checklist */
+ul.check { list-style: none; padding: 0; display: grid; gap: .5rem; }
+ul.check li { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: .7rem .9rem; }
+ul.check input { margin-top: .35rem; accent-color: var(--fireweed); }
+
+.sources { columns: 2 18rem; column-gap: 2rem; font-size: .9rem; }
+.sources li { break-inside: avoid; }
+
+footer { padding-block: 2rem 3rem; border-top: 1px solid var(--rule); font-size: .88rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap wide nav-inner">
+    <a href="#snapshot">Snapshot</a>
+    <a href="#connections">Connections</a>
+    <a href="#fit">Fit</a>
+    <a href="#pitch">Your pitch</a>
+    <a href="#stories">Story bank</a>
+    <a href="#fireweed">Fireweed</a>
+    <a href="#people">People</a>
+    <a href="#context">Context</a>
+    <a href="#questions">Questions</a>
+    <a href="#ask">Ask them</a>
+    <a href="#watch">Watch-outs</a>
+    <a href="#checklist">Checklist</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<header class="hero" id="snapshot">
+  <div class="wrap">
+    <span class="eyebrow">Interview prep · Laura Salamanca (she/they)</span>
+    <h1>You're already <em>in the circle.</em></h1>
+    <p class="lede">You sit on Fireweed's Advisory Circle, your chapter is on their reading list, and you manage operations at Call Auntie, which co-leads Phase 2. The project's main deliverable is a culturally safe abortion support hotline, and you have run two. This guide turns that into answers.</p>
+    <dl class="facts">
+      <div class="fact"><dt>Role</dt><dd>Research Coordinator III</dd></div>
+      <div class="fact"><dt>Hiring PI</dt><dd>Dr. Renée Monchalin</dd></div>
+      <div class="fact"><dt>Project</dt><dd>From Research to Action (CIHR)</dd></div>
+      <div class="fact"><dt>Split</dt><dd>80% project · 20% program</dd></div>
+      <div class="fact"><dt>Pay</dt><dd>$47.22–$59.03 / hr</dd></div>
+      <div class="fact"><dt>Term</dt><dd>2 yrs, may extend · 37.5 h/wk</dd></div>
+      <div class="fact"><dt>Start date</dt><dd>Nov 2, 2026</dd></div>
+      <div class="fact"><dt>Where</dt><dd>Hybrid · 30 Bond St (Unity Health)</dd></div>
+    </dl>
+    <p class="small muted">Expected panel: Renée plus community partner representatives, likely from Seventh Generation Midwives Toronto / Call Auntie and ekw'í7tl (said "ah-quay-tull"). Prepare for people who know you and people who don't.</p>
+  </div>
+</header>
+
+<main>
+
+<!-- CONNECTIONS -->
+<section id="connections">
+  <div class="wrap wide">
+    <div class="section-head">
+      <span class="eyebrow">Your existing relationship with Fireweed</span>
+      <h2>Six threads that already tie you to this team</h2>
+      <p>Bring these up naturally and with humility. They show relationship and accountability, not a claim to insider status.</p>
+    </div>
+    <div class="links">
+      <article class="link-card key">
+        <span class="eyebrow">On their website</span>
+        <h3>Advisory Circle member</h3>
+        <p>The Fireweed Team page lists "Laura Salamanca (she/they), Fertility Awareness Educator (FAE); Holistic Reproductive Health Practitioner (HRHP)" in the Advisory Circle. Fireweed describes the Circle as "a group of fourteen Indigenous and allied service providers working in the realm of abortion support and care in Canada."</p>
+        <p class="use"><b>Use it:</b> "I've seen how this team works from the Advisory Circle side. I know what it feels like to be asked for input, and what makes that feel reciprocal. I'd bring that to coordinating the Circle and the steering committee."</p>
+      </article>
+      <article class="link-card key">
+        <span class="eyebrow">On their reading list</span>
+        <h3>Your chapter is on "Continued Learning"</h3>
+        <p><i>Abortion: History, Politics, and Reproductive Justice after Morgentaler</i> (Stettner, Burnett &amp; Hay, eds., UBC Press, 2017) is listed under Books of Interest. You wrote Chapter 13: <b>"Reproductive Justice in Canada: Exploring Immigrant Women's Experiences"</b> (pp. 292–312).</p>
+        <p class="use"><b>Use it:</b> The editors say your ethnography "shows that it is difficult to construct a clean and ordered narrative of feminist progress in the context of Canadian abortion services." That is Fireweed's "legal isn't the same as accessible" argument, made for another community.</p>
+      </article>
+      <article class="link-card key">
+        <span class="eyebrow">Phase 2 co-lead</span>
+        <h3>Call Auntie / Seventh Generation Midwives Toronto</h3>
+        <p>You're Manager of Community Operations at Call Auntie, one of the two community organizations co-leading From Research to Action. Call Auntie began in April 2020 as a phone line, the COVID-19 Indigenous Pathways Hotline. Fireweed's own directory lists the Call Auntie Clinic under Ontario.</p>
+        <p class="use"><b>Use it:</b> You already know the partner's people, pace, priorities and ways of working. Expect a question about how you'd hold both relationships (see Q2).</p>
+      </article>
+      <article class="link-card">
+        <span class="eyebrow">Phase 2 deliverable</span>
+        <h3>The hotline</h3>
+        <p>CIHR's $1.9M grant funds a culturally safe abortion support hotline with Call Auntie and ekw'í7tl, plus an evaluation and a cultural safety credential module for providers. The posting says you'd train "hotline navigators."</p>
+        <p class="use"><b>Use it:</b> You ran Action Canada's Access Line (about 6,000 calls a year) and TRCC's 24/7 crisis line (more than 200 volunteers, over 3,000 callers a year). Few candidates can say that.</p>
+      </article>
+      <article class="link-card">
+        <span class="eyebrow">Shared partners</span>
+        <h3>CART at UBC</h3>
+        <p>You delivered <i>Asking for an Abortion: A Pocket Guide</i> for the CART Access Project. Fireweed's provider guidebook, <i>Enabling Indigenous Practices in Procedural Abortion</i> (2025), was written by UBC's CART team, and CART's Sarah Munro is a Fireweed co-investigator.</p>
+        <p class="use"><b>Use it:</b> You've already delivered on a national multi-partner abortion access project with people in this network.</p>
+      </article>
+      <article class="link-card">
+        <span class="eyebrow">Indigenous-led research</span>
+        <h3>RA for Claire Dion Fletcher, RM</h3>
+        <p>In 2023 you did all 17 semi-structured interviews for her study of an Indigenous-led midwife hospitalist team and culturally safe care, funded by an Association of Ontario Midwives grant. Dion Fletcher (Lenape-Potawatomi) is a Seventh Generation Midwives Toronto midwife.</p>
+        <p class="use"><b>Use it:</b> This is your direct answer to the cover-letter prompt about "experience working within Indigenous community-led research."</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section id="fit">
+  <div class="wrap wide">
+    <div class="section-head">
+      <span class="eyebrow">Posting vs. your record</span>
+      <h2>How you match what they asked for</h2>
+      <p><span class="pill strong">Strong</span> is direct evidence. <span class="pill solid">Solid</span> is clear evidence that needs framing. <span class="pill build">Bridge</span> is a gap to answer honestly with a plan.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>They want</th><th>Your evidence</th><th>Match</th></tr></thead>
+        <tbody>
+          <tr><td>Master's in a related health or social science field, plus 3+ years</td><td>MA, Medical Anthropology, Collaborative Program in Women's Health, U of T (2013). 10+ years in qualitative research and 6+ years managing programs.</td><td><span class="pill strong">Strong</span></td></tr>
+          <tr><td>Working with Indigenous communities: cultural safety, self-determination, OCAP®, community-led research</td><td>Call Auntie (2024–present), the Fireweed Advisory Circle, and the RA role on the Indigenous-led midwife hospitalist study. Co-taught Social Justice in Midwifery at TMU (2025).</td><td><span class="pill strong">Strong</span><br><span class="small muted">Prepare one concrete OCAP® example</span></td></tr>
+          <tr><td>Coordinating research, community initiatives or multi-partner programs</td><td>The Access Line, the Pocket Guide with CART, the Abortion Access Tracker with LEAF, and national partnerships at Action Canada.</td><td><span class="pill strong">Strong</span></td></tr>
+          <tr><td>Hotline, navigators, trainees: training and day-to-day guidance</td><td>Access Line (4 full-time and 3 part-time staff, 15 volunteers). TRCC: 200+ volunteers and a rebuilt 52-hour training. Six CHWs at Call Auntie. Experience in unionized workplaces.</td><td><span class="pill strong">Strong</span></td></tr>
+          <tr><td>Steering committee and Advisory Circle coordination</td><td>You've been a Fireweed Advisory Circle member yourself.</td><td><span class="pill strong">Strong</span></td></tr>
+          <tr><td>Qualitative and quantitative data collection: guides, surveys, sampling, coding, interviews</td><td>17 interviews (Dion Fletcher). Your MA ethnography. Recruiter on the IMPACT study (Dr. Cindy-Lee Dennis) and Recruitment Coordinator on the NICE elder abuse project. Seven years at Market Strategies International as interviewer, coder, QA supervisor and project supervisor.</td><td><span class="pill strong">Strong</span><br><span class="small muted">Use Market Strategies for the quantitative side</span></td></tr>
+          <tr><td>Budgets, honoraria and participant payments</td><td>Managed a $1.2M Health Canada grant. Prepare a specific example of paying honoraria (Call Auntie knowledge keeper, volunteers, participants).</td><td><span class="pill solid">Solid</span></td></tr>
+          <tr><td>Proposals, grant applications and protocols (20% of the role)</td><td>Won a $100K grant from the Shoppers Foundation for Women's Health. Designed two new roles and an M&amp;E plan at Action Canada.</td><td><span class="pill solid">Solid</span></td></tr>
+          <tr><td>Supporting an Indigenous-led evaluation</td><td>Built the program monitoring and evaluation plan at Action Canada. Led the CHW wellness and workload evaluation at Call Auntie.</td><td><span class="pill solid">Solid</span></td></tr>
+          <tr><td>Excel, databases, survey software (REDCap, Qualtrics)</td><td>Set up and rolled out CaseWORKS (VitalHub) at Call Auntie. REDCap, Microsoft Office, Google Workspace.</td><td><span class="pill solid">Solid</span></td></tr>
+          <tr><td>Presenting research and supporting partners to co-present</td><td>TMU lecturer. Training curricula. Body Wise workshops for frontline workers. Content for the Pocket Guide and the Tracker.</td><td><span class="pill solid">Solid</span></td></tr>
+          <tr><td>REB submissions, ethics and safety protocols</td><td>Worked under ethics protocols in several studies and did your own MA ethnography. You haven't listed leading an REB submission.</td><td><span class="pill build">Bridge</span></td></tr>
+          <tr><td>NVivo (an asset)</td><td>Not on your resume. Point to your hands-on coding at Market Strategies and in your MA, and say you'll be fluent quickly.</td><td><span class="pill build">Bridge</span></td></tr>
+          <tr><td>TCPS 2 CORE (within 2 weeks of hire)</td><td>If you haven't done it, finish it before the interview. It's free online and takes about 3 hours.</td><td><span class="pill build">Do now</span></td></tr>
+          <tr><td>Lived experience, community connection, commitment to reproductive justice</td><td>11+ years in frontline SRH work. Queer woman of colour and immigrant. Published reproductive justice scholarship. Body Wise practice.</td><td><span class="pill strong">Strong</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PITCH -->
+<section id="pitch">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">"Tell us about yourself"</span>
+      <h2>Your 90-second opener</h2>
+      <p>A draft in your voice. Say it out loud, cut anything that doesn't sound like you, and keep it under two minutes. Start with relationship, then your work, then why this role.</p>
+    </div>
+    <blockquote class="pitch">
+      <p>Thank you for having me. I want to start by acknowledging that many of you already know me, through the Advisory Circle and through Call Auntie, and that being in relationship with this work matters a lot to me.</p>
+      <p>I've spent over a decade in sexual and reproductive health: eleven years in frontline counselling at clinics across Toronto, then leading the crisis line at the Toronto Rape Crisis Centre, then running Action Canada's Access Line as Director of Health Promotion. Now I'm at Call Auntie, building the operational backbone for our community health workers.</p>
+      <p>Research has been there the whole time. My MA ethnography on immigrant women's access to sexual health care became a chapter in the Stettner, Burnett and Hay volume, and in 2023 I did the interviews for Claire Dion Fletcher's study on Indigenous-led midwifery care.</p>
+      <p>From Research to Action sits where those threads meet: a hotline, a team of navigators, community partners leading, and an evaluation that has to hold Indigenous ways of knowing. I'd love to help build the infrastructure that lets Fireweed's findings become real services, and to do it in a way that's accountable to the community.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section id="stories">
+  <div class="wrap wide">
+    <div class="section-head">
+      <span class="eyebrow">Prepare these before the interview</span>
+      <h2>Your story bank</h2>
+      <p>Eight stories cover nearly every question below. For each one, write down the situation, what you did, the result (with a number if you have one), and what you learned about relationships.</p>
+    </div>
+    <div class="stories">
+      <article class="story"><h3>Running the Access Line</h3><p class="small">About 6,000 calls a year, 7 staff, 15 volunteers, and a $1.2M Health Canada grant.</p><div class="tags"><span class="tag">hotline</span><span class="tag">budget</span><span class="tag">supervision</span></div></article>
+      <article class="story"><h3>Moving TRCC training online</h3><p class="small">Rebuilt 52+ hours of curriculum during the pandemic and kept 24/7 coverage with 200+ volunteers.</p><div class="tags"><span class="tag">training</span><span class="tag">navigators</span><span class="tag">adapting</span></div></article>
+      <article class="story"><h3>Rolling out CaseWORKS</h3><p class="small">Configured the system, trained the team, and supported adoption at Call Auntie.</p><div class="tags"><span class="tag">data systems</span><span class="tag">change management</span></div></article>
+      <article class="story"><h3>Rebalancing CHW workload</h3><p class="small">Evaluated wellness, made invisible labour visible, rebuilt workload equity, and added knowledge keeper support.</p><div class="tags"><span class="tag">evaluation</span><span class="tag">relational leadership</span><span class="tag">wellness</span></div></article>
+      <article class="story"><h3>The $100K Shoppers grant</h3><p class="small">Secured funding to connect underserved people to SRH services, including abortion.</p><div class="tags"><span class="tag">grant writing</span><span class="tag">strategy</span></div></article>
+      <article class="story"><h3>Pocket Guide and Abortion Access Tracker</h3><p class="small">National deliverables with CART (UBC) and LEAF, delivered on time across partners.</p><div class="tags"><span class="tag">partnerships</span><span class="tag">knowledge mobilization</span></div></article>
+      <article class="story"><h3>17 interviews for Dion Fletcher</h3><p class="small">Indigenous-led midwife hospitalist study, from recruitment and consent through every interview.</p><div class="tags"><span class="tag">qualitative</span><span class="tag">cultural safety</span><span class="tag">consent</span></div></article>
+      <article class="story"><h3>Your MA ethnography and chapter</h3><p class="small">Immigrant women's experiences of abortion and SRH access, framed as reproductive justice.</p><div class="tags"><span class="tag">research design</span><span class="tag">publishing</span><span class="tag">RJ</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- FIREWEED -->
+<section id="fireweed">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Know the organization</span>
+      <h2>The Fireweed Project, from pilot to hotline</h2>
+      <p>Fireweed is the plant that grows back first after a forest fire. A pilot participant shared that it was traditionally used as birth control and to end a pregnancy, and the name honours that.</p>
+    </div>
+    <ol class="timeline">
+      <li><span class="yr">2020</span><div>Call Auntie launches as a COVID-19 Indigenous Pathways Hotline run by Indigenous midwives and community health workers. Renée publishes a commentary on COVID, abortion access, and bridging Western and Indigenous knowledges.</div></li>
+      <li><span class="yr">2021</span><div>Pilot, "Global Goal, Local Impact" (UVic). Fifteen conversational interviews, Sept–Nov 2021, guided by an Indigenous Advisory Committee of four frontline providers.</div></li>
+      <li><span class="yr">2022</span><div>Phase 1, "The Right to Abortion Project," funded by the SSHRC Race, Gender and Diversity Initiative (about $448K over 3 years). It was co-led with four community organizations: Abortion Support Services Atlantic, ekw'í7tl, the Northern Reproductive Justice Network and Northern Manitoba Abortion Support. Renée also receives a Michael Smith Health Research BC Scholar award.</div></li>
+      <li><span class="yr">2023</span><div>Two peer-reviewed papers: on access barriers in <i>Contraception</i>, and on community recommendations in <i>Sexual and Reproductive Health Matters</i>.</div></li>
+      <li><span class="yr">2024</span><div>ARCC panel, "Decolonizing Reproductive Justice – Indigenous Voices" (Feb). A recommendations preprint from about 40 conversations (Oct). UVic announces the <b>$1.9M CIHR grant</b> for the hotline (Sept).</div></li>
+      <li><span class="yr">2025</span><div>The "Sacred Stories" video. CART's provider guidebook on enabling Indigenous practices. Willow Paul's MA thesis on post-abortion experiences (n=39).</div></li>
+      <li><span class="yr">2026</span><div>Community Report. FNTN webinar (Apr 28). The program moves to Unity Health Toronto's MAP Centre, where it is hiring a Research Coordinator III and an Admin Assistant.</div></li>
+    </ol>
+
+    <div class="stack" style="margin-top:2rem">
+      <div class="callout stem">
+        <h3>What Phase 1 found</h3>
+        <p><b>Barriers</b> (<i>Contraception</i>, 2023; n=15 from Anishinaabe, Cree, Dene, Haudenosaunee, Inuit, Métis and Mi'kmaq Nations): logistical barriers, poor treatment, stigma, colonialism's effect on attitudes toward abortion, traditional knowledge, and follow-up care and support. Reproductive coercion also came up.</p>
+        <p><b>Recommendations</b> (<i>SRHM</i>, 2023): choice of where the abortion happens; holistic post-abortion support; non-judgmental information; support persons and advocacy (booking, travel, appointments); and cultural safety grounded in local practices.</p>
+        <p><b>Biggest gap:</b> post-abortion support. That finding led to the aftercare kits, the <i>Honouring Your Journey</i> booklet, and now the hotline.</p>
+      </div>
+      <div class="callout">
+        <h3>What From Research to Action is building</h3>
+        <ul>
+          <li>A <b>culturally safe abortion support hotline</b>, co-led by Call Auntie / SGMT and ekw'í7tl, with trained navigators.</li>
+          <li>An <b>Indigenous-led evaluation</b> of the hotline. Monique Auger and Astrid Pérez Piñán were named on evaluation.</li>
+          <li>A <b>cultural safety credential module</b> for abortion providers.</li>
+          <li>Five years, national, funded by CIHR, now based at Unity Health / MAP.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:.5rem">What Fireweed offers today</h3>
+        <ul>
+          <li><b>Post-abortion support kits</b> for First Nations, Métis and Inuit people aged 12+, shipped discreetly. They hold comfort items, traditional medicines and teachings.</li>
+          <li><b><i>Honouring Your Journey</i></b>, a resource booklet that runs from access information to emotional and spiritual recovery.</li>
+          <li>The <b>"Abortion is Traditional"</b> zine.</li>
+          <li>A <b>template letter to request taking the products of conception home</b>, in English and French. It's a strong concrete example of cultural safety.</li>
+          <li>A <b>directory of Indigenous doulas and organizations</b> offering abortion support, including Call Auntie and ekw'í7tl.</li>
+          <li>For providers: the <i>Enabling Indigenous Practices in Procedural Abortion</i> guidebook (smudging, taking remains home, support persons), a kit poster, patient handouts and training links.</li>
+        </ul>
+      </div>
+      <div class="callout ember">
+        <h3>Language to use</h3>
+        <p>Culturally safe abortion care · community-led · Indigenous-led · relational · reciprocity · self-determination · Indigenous data governance / OCAP® · reproductive justice · post-abortion and holistic support · "abortion is traditional" · "legal doesn't mean accessible" · conversations (Fireweed calls its interviews conversations) · Two-Spirit and 2SLGBTQIA+ (not only "women").</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section id="people">
+  <div class="wrap wide">
+    <div class="section-head">
+      <span class="eyebrow">Who's who</span>
+      <h2>People you may meet or mention</h2>
+    </div>
+    <div class="people">
+      <article class="person">
+        <h3>Dr. Renée Monchalin</h3>
+        <span class="role">Principal Investigator · Project Director</span>
+        <p class="small">Métis, a citizen of the Métis Nation of Ontario (historic Sault Ste. Marie community), raised in Fort Erie. Scientist at Unity Health Toronto's MAP Centre and Well Living House, and Associate Professor (status-only) at U of T Dalla Lana. Formerly at UVic. Did her PhD at Dalla Lana and was a research coordinator at the same centre from 2014 to 2019. Calls herself a "public health feminist." Edited <i>Critical Perspectives in Public Health Feminisms</i> (Canadian Scholars, 2023).</p>
+        <p class="small muted">Her current program "advances Métis reproductive self-determination."</p>
+      </article>
+      <article class="person">
+        <h3>Cheryllee Bourgeois</h3>
+        <span class="role">Call Auntie / SGMT co-founder</span>
+        <p class="small">Red River Métis midwife, Call Auntie Program Lead, and president of the Toronto Birth Centre board. She co-authored papers with Renée in 2019 and 2020, so this partnership goes back years.</p>
+      </article>
+      <article class="person">
+        <h3>Danette Jubinville</h3>
+        <span class="role">ekw'í7tl Indigenous Doula Collective</span>
+        <p class="small">Director of Research and Education and a PhD candidate at SFU. Co-authored both 2023 Fireweed papers. ekw'í7tl means "family" in the Squamish language. The collective now focuses on training, research and education rather than direct doula services.</p>
+      </article>
+      <article class="person">
+        <h3>Dr. Suzanne Shoush</h3>
+        <span class="role">Call Auntie lead physician</span>
+        <p class="small">Inner City Health Associates physician and Indigenous Health Faculty Lead at Temerty Medicine.</p>
+      </article>
+      <article class="person">
+        <h3>Astrid V. Pérez Piñán</h3>
+        <span class="role">Co-Project Director (UVic)</span>
+        <p class="small">Decolonial and transnational feminist scholar. Named on the hotline evaluation and the credential module.</p>
+      </article>
+      <article class="person">
+        <h3>Monique Auger</h3>
+        <span class="role">Co-researcher (UVic)</span>
+        <p class="small">Métis scholar. Named on the hotline evaluation.</p>
+      </article>
+      <article class="person">
+        <h3>Sarah Munro · Carmen Logie</h3>
+        <span class="role">Co-investigators</span>
+        <p class="small">Munro (UBC, CART) researches mifepristone and contraception access and was the SSHRC co-applicant. Logie is at U of T.</p>
+      </article>
+      <article class="person">
+        <h3>Willow Paul · Madison Wells</h3>
+        <span class="role">Phase 1 Research Manager · Coordinator</span>
+        <p class="small">The people who held the role you're applying for in Phase 1 at UVic. Their thesis and community report work shows the standard of the role.</p>
+      </article>
+      <article class="person">
+        <h3>Advisory Circle peers</h3>
+        <span class="role">Your Circle</span>
+        <p class="small">Dr. Alexa Lesperance, Emma Antoine-Allan (Native Youth Sexual Health Network), Dr. Janelle Syring, Angie Kells, Danielle Peebles, Piyêsiw Crane, Dehga Scott, Jill Doctoroff, Haley Strother and Dr. A.J. Lowik.</p>
+      </article>
+      <article class="person">
+        <h3>Dr. Janet Smylie · Dr. Nav Persaud</h3>
+        <span class="role">Unity Health context</span>
+        <p class="small">Smylie directs Well Living House and co-leads Unity Health's new Indigenous Health Research Stream (2026). Persaud became MAP Centre director in July 2026 and is a well-known pharmacare advocate.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section id="context">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Be fluent in the landscape</span>
+      <h2>Policy and reproductive justice context, 2026</h2>
+      <p>You won't be quizzed on all of this. Knowing it lets you connect any answer to the bigger picture.</p>
+    </div>
+    <div class="stack">
+      <div><h3>Forced and coerced sterilization</h3><p>Bill S-228 (Senator Yvonne Boyer, Métis) received royal assent on June 15, 2026. It makes sterilization without consent an aggravated assault in the Criminal Code. Survivors' groups are shaping the implementation guidance. Background: the Senate's 2022 report <i>The Scars that We Carry</i>, class actions in several provinces, and Boyer and Bartlett's 2017 Saskatoon review.</p></div>
+      <div><h3>Birth alerts</h3><p>Every province had ended them by April 2023 (Quebec was last). Advocates say informal apprehensions continue. This is part of why trust in health systems is low.</p></div>
+      <div><h3>Funding</h3><p>The federal Sexual and Reproductive Health Fund was cut in 2024–25. In March 2026 about $5.4M was announced for five national organizations, including $949K to Abortion Care Canada partly for Indigenous, 2SLGBTQI+ and disabled people's access. Advocates, including Action Canada, say it falls short.</p></div>
+      <div><h3>Pharmacare and contraception</h3><p>Bilateral deals cover contraception in Manitoba, BC, PEI and Yukon. Ontario has none, and new deals appear stalled in 2026. This matters for a Toronto-based hotline that gives callers information.</p></div>
+      <div><h3>Mifepristone</h3><p>Pharmacists have been able to dispense it since 2017, but access is uneven: 34% of BC pharmacies couldn't dispense within 3 days (2025), and an Ontario study called it "approved but unavailable." NIHB covers it for many First Nations and Inuit people. Travel costs usually aren't covered.</p></div>
+      <div><h3>Frameworks to name</h3><p>TRC Calls to Action 18–24 · MMIWG Calls for Justice (health and wellness) · <i>In Plain Sight</i> (BC, 2020) · Joyce's Principle · UNDRIP · OCAP® (First Nations Information Governance Centre) · TCPS 2 Chapter 9 · CARE principles · reproductive justice as defined by SisterSong (1994).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section id="questions">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Practice set</span>
+      <h2>Likely questions and how to answer them</h2>
+      <p>Weighted for a panel of Renée and community partners. Each card has why they're asking, how to approach it, your evidence, and a first line. Mark a card practiced once you've said your answer out loud. Your marks stay in this browser only.</p>
+    </div>
+
+    <div class="q-tools">
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn" type="button" id="expand-all">Expand all</button>
+        <button class="btn" type="button" id="collapse-all">Collapse all</button>
+      </div>
+      <span class="progress" id="progress" aria-live="polite"></span>
+    </div>
+
+    <div id="qlist"></div>
+  </div>
+</section>
+
+<!-- ASK THEM -->
+<section id="ask">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Your turn</span>
+      <h2>Questions to ask the panel</h2>
+      <p>Pick three or four. Ask the partners something too, not only Renée.</p>
+    </div>
+    <div class="stack">
+      <div class="callout stem">
+        <h3>For Renée</h3>
+        <ul>
+          <li>Where is the hotline today: design, pilot, or launch? What does success look like for this role at 6 months and at 1 year?</li>
+          <li>How do you like to work with a coordinator day to day? What do you want to hand over completely, and what do you want to stay close to?</li>
+          <li>How is the program set up between Unity Health / MAP and UVic now? Where does study data live, and how are data governance agreements with partners handled?</li>
+          <li>For the 20% program work, what new projects or proposals are you thinking about? Does it connect to the Métis reproductive self-determination work?</li>
+          <li>How does Fireweed connect with Unity Health's new Indigenous Health Research Stream and Well Living House?</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h3>For the community partners</h3>
+        <ul>
+          <li>What has made past research partnerships feel good to you, and what has made them feel extractive? What should I always do, and never do?</li>
+          <li>How do you want decisions shared through the steering committee? Is there a terms of reference, or is it still being shaped together?</li>
+          <li>How should the hotline's navigators and the research team relate to each other, so research needs don't burden callers or navigators?</li>
+        </ul>
+      </div>
+      <div class="callout ember">
+        <h3>About the team</h3>
+        <ul>
+          <li>Who would I supervise in the first year (RAs, navigators, students, the new Admin Assistant)?</li>
+          <li>The work involves heavy emotional material. How does the team support wellness, ceremony or access to knowledge keepers?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WATCH-OUTS -->
+<section id="watch">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Avoid surprises</span>
+      <h2>Watch-outs</h2>
+    </div>
+    <div class="stack">
+      <div><h3>Your current role at Call Auntie</h3><p>Someone from Call Auntie may be on the panel. Speak warmly about the team, frame the move as continuing the same work from the research side, and have a transition plan ready. The posted start date is Nov 2, so decide in advance what notice you'll give and say it clearly.</p></div>
+      <div><h3>Positionality</h3><p>Name it early and plainly when relevant: you're non-Indigenous, a queer woman of colour and an immigrant, working in solidarity. Don't claim insider status. Show how you'd make room for Indigenous staff and trainees and how you'd stay accountable (see Q3).</p></div>
+      <div><h3>Have exact figures ready</h3><p>Public announcements give Action Canada's Health Canada funding as multi-year totals of about $2M or more. If asked about "$1.2M," be ready to say exactly what it covered (for example, the portion or yearly budget you managed). Also know your current Justisse credential status: Fireweed lists you as HRHP, and your booking page says "HRHP Intern."</p></div>
+      <div><h3>Gaps to answer with a plan</h3><p>REB submissions, NVivo and conference presentations aren't explicit on your resume. Answer each with what you've done that's closest, then how you'd get up to speed. Don't apologize.</p></div>
+      <div><h3>The host institution</h3><p>Unity Health Toronto is a Catholic health network. Don't raise it. If it comes up, say you trust that the PI and partners have arranged things so the work can be done well.</p></div>
+      <div><h3>Names and terms</h3><p>Renée is Métis (Métis Nation of Ontario). ekw'í7tl is said "ah-quay-tull." Fireweed calls interviews "conversations." Use 2SLGBTQIA+ and Two-Spirit, not only "women."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Before the interview</span>
+      <h2>Prep checklist</h2>
+      <p>Ticks stay in this browser only.</p>
+    </div>
+    <ul class="check" id="checklist-items">
+      <li><input type="checkbox" id="c1"><label for="c1">Finish <b>TCPS 2: CORE-2022</b> online (free, about 3 hrs) and mention it. It's required within 2 weeks of hire.</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">Re-read your Chapter 13 and the editors' introduction. Have one sentence on your argument and one on how it connects to Fireweed.</label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">Read the two 2023 Fireweed papers (<i>Contraception</i>; <i>SRHM</i>, open access) and skim the 2024 recommendations preprint.</label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">Watch "Sacred Stories from the Fireweed Project" and look through the Community Report.</label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">Re-visit fireweedproject.ca: Team, Offerings, Continued Learning, the provider guidebook, and the template letter for taking products of conception home.</label></li>
+      <li><input type="checkbox" id="c6"><label for="c6">Review OCAP® (fnigc.ca) and TCPS 2 Chapter 9. Prepare one concrete example of each in practice.</label></li>
+      <li><input type="checkbox" id="c7"><label for="c7">Skim Renée's <i>Critical Perspectives in Public Health Feminisms</i>, at least Ch. 1.</label></li>
+      <li><input type="checkbox" id="c8"><label for="c8">Write out your 8 stories (situation, action, result, learning) and say the 90-second opener out loud three times.</label></li>
+      <li><input type="checkbox" id="c9"><label for="c9">Decide your Call Auntie notice and transition plan, and your start-date flexibility.</label></li>
+      <li><input type="checkbox" id="c10"><label for="c10">Prepare a salary answer within the posted $47.22–$59.03/hr. With 10+ years' experience, the upper half is reasonable.</label></li>
+      <li><input type="checkbox" id="c11"><label for="c11">Choose 3–4 questions from "Ask them," including at least one for the partners.</label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section id="sources">
+  <div class="wrap wide">
+    <div class="section-head">
+      <span class="eyebrow">Where this came from</span>
+      <h2>Sources</h2>
+      <p>Compiled Oct 29, 2026 from Laura's resume and cover letter, the job posting, and public web sources. Some details came from search snippets. Check anything you plan to quote.</p>
+    </div>
+    <ul class="sources">
+      <li><a href="https://www.fireweedproject.ca/team" target="_blank" rel="noopener">Fireweed Project: Team and Advisory Circle</a></li>
+      <li><a href="https://www.fireweedproject.ca/continued-learning" target="_blank" rel="noopener">Fireweed Project: Continued Learning</a></li>
+      <li><a href="https://www.fireweedproject.ca/were-hiring/researchcoordinator" target="_blank" rel="noopener">Job posting: Research Coordinator III</a></li>
+      <li><a href="https://www.fireweedproject.ca/abortion-support-services-by-indigenous-organizations" target="_blank" rel="noopener">Fireweed: Indigenous abortion support directory</a></li>
+      <li><a href="https://www.fireweedproject.ca/guidebook-for-enabling-indigenous-practices" target="_blank" rel="noopener">Enabling Indigenous Practices in Procedural Abortion</a></li>
+      <li><a href="https://www.fireweedproject.ca/order-a-support-kit" target="_blank" rel="noopener">Fireweed: support kits</a></li>
+      <li><a href="https://www.ubcpress.ca/abortion" target="_blank" rel="noopener">UBC Press: <i>Abortion after Morgentaler</i></a></li>
+      <li><a href="https://www.degruyterbrill.com/document/doi/10.59962/9780774835756-015/html" target="_blank" rel="noopener">Ch. 13, Salamanca (2017)</a></li>
+      <li><a href="https://www.feelbodywise.com" target="_blank" rel="noopener">Body Wise (feelbodywise.com)</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/37116606/" target="_blank" rel="noopener">Monchalin et al. 2023, <i>Contraception</i></a></li>
+      <li><a href="https://www.tandfonline.com/doi/full/10.1080/26410397.2023.2247667" target="_blank" rel="noopener">Monchalin et al. 2023, <i>SRHM</i></a></li>
+      <li><a href="https://www.researchsquare.com/article/rs-5278379/v1" target="_blank" rel="noopener">Fireweed recommendations preprint (2024)</a></li>
+      <li><a href="https://www.uvic.ca/health/stories/health/grant-cultural-safe-abortion.php" target="_blank" rel="noopener">UVic: $1.9M CIHR hotline grant</a></li>
+      <li><a href="https://sshrc-crsh.canada.ca/en/research-in-action/rgdi-project-summaries/monchalin.aspx" target="_blank" rel="noopener">SSHRC RGDI project summary</a></li>
+      <li><a href="https://dspace.library.uvic.ca/items/a813dd14-b874-438a-bd1a-96c2a499de5c" target="_blank" rel="noopener">Fireweed Community Report (2026)</a></li>
+      <li><a href="https://dspace.library.uvic.ca/items/1159ba47-4e9f-4d92-a2ce-d0ccbe76e6a2" target="_blank" rel="noopener">"Sacred Stories" video</a></li>
+      <li><a href="https://research.unityhealth.to/profiles/renee-monchalin/" target="_blank" rel="noopener">Unity Health: Renée Monchalin</a></li>
+      <li><a href="https://www.reneemonchalin.com/about" target="_blank" rel="noopener">reneemonchalin.com</a></li>
+      <li><a href="https://canadianscholars.ca/book/critical-perspectives-in-public-health-feminisms/" target="_blank" rel="noopener"><i>Critical Perspectives in Public Health Feminisms</i></a></li>
+      <li><a href="https://www.callauntieclinic.com" target="_blank" rel="noopener">Call Auntie Clinic</a></li>
+      <li><a href="https://www.cbc.ca/news/indigenous/call-auntie-gta-indigenous-hotline-1.5687042" target="_blank" rel="noopener">CBC: Call Auntie hotline (2020)</a></li>
+      <li><a href="https://ekwi7tldoulacollective.org/our-story/" target="_blank" rel="noopener">ekw'í7tl: Our Story</a></li>
+      <li><a href="https://www.actioncanadashr.org/sexual-health-hub/asking-abortion-pocket-guide" target="_blank" rel="noopener">Asking for an Abortion: A Pocket Guide</a></li>
+      <li><a href="https://www.abortionaccesstracker.ca" target="_blank" rel="noopener">Abortion Access Tracker</a></li>
+      <li><a href="https://cart-grac.ubc.ca/the-cart-access-project-2/" target="_blank" rel="noopener">CART Access Project</a></li>
+      <li><a href="https://www.parl.ca/legisinfo/en/bill/45-1/s-228" target="_blank" rel="noopener">Bill S-228 (LEGISinfo)</a></li>
+      <li><a href="https://unityhealth.to/2026/06/indigenous-health-research-stream/" target="_blank" rel="noopener">Unity Health: Indigenous Health Research Stream</a></li>
+      <li><a href="https://unityhealth.to/2026/06/dr-nav-persaud-named-director-of-map-centre-for-urban-health-solutions/" target="_blank" rel="noopener">MAP Centre: new director</a></li>
+      <li><a href="https://fnigc.ca/ocap-training/" target="_blank" rel="noopener">FNIGC: OCAP®</a></li>
+      <li><a href="https://tcps2core.ca/welcome" target="_blank" rel="noopener">TCPS 2: CORE-2022 tutorial</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap wide">Prepared for Laura Salamanca's interview with The Fireweed Project · October 2026 · Private prep notes, not affiliated with The Fireweed Project.</div>
+</footer>
+
+<script>
+const QUESTIONS = [
+  { group: "Opening and motivation", items: [
+    { q: "Tell us about yourself, and why Fireweed, why now?",
+      why: "Do you understand what this phase is, and is your motivation about the community rather than a title?",
+      how: ["Use the 90-second opener above.", "Connect the hotline to your hotline experience early.", "End on research turning into services."],
+      ev: ["Advisory Circle member", "Access Line and TRCC crisis line", "Ch. 13 and the Dion Fletcher interviews"],
+      open: "Many of you already know me through the Advisory Circle and Call Auntie, and being in relationship with this work matters a lot to me." },
+    { q: "You're at Call Auntie, a co-lead on this project. Why move to the research side, and how would you hold both relationships?",
+      why: "Partners want to know you won't leave Call Auntie in a hard spot, and Renée wants to know you can act for the whole project, not one partner.",
+      how: ["Be warm and transparent: frame it as the same mission from a different seat.", "Name the transition plan and your notice.", "Say how you'd keep a clear role: you'd serve every partner equally, including ekw'í7tl and future sites, and you'd raise any conflict of interest openly."],
+      ev: ["Built CHW management infrastructure and CaseWORKS at Call Auntie, which makes handover easier", "Cover letter: 'Whether as part of the team at Call Auntie or at Fireweed, I look forward to working together.'"],
+      open: "I'd see it as moving to another seat at the same table. Call Auntie will always be family to me, and in this role my job would be to make sure every partner feels equally held." }
+  ]},
+  { group: "Indigenous community-led research and positionality", items: [
+    { q: "This is a fully Indigenous-led program, and we encouraged First Nations, Inuit and Métis applicants. How do you understand your role as a non-Indigenous person here?",
+      why: "This is the most important question for a non-Indigenous candidate. They want self-awareness, humility, and a concrete plan for making room for Indigenous leadership, not a defence.",
+      how: ["Name your positionality plainly: queer woman of colour, immigrant, non-Indigenous, and that your wellbeing is tied to Indigenous community.", "Say what you'd hold and what you'd hand back: you bring operations and infrastructure; decisions about knowledge, ceremony and direction belong to Indigenous partners and the PI.", "Commit to building Indigenous capacity: hiring and mentoring Indigenous RAs and navigators, opening doors to opportunities like co-presenting, and not taking up visible space.", "Describe how you stay accountable: feedback, correction, and paid relationships with knowledge keepers."],
+      ev: ["Call Auntie: relational, anti-racist leadership in an Indigenous-led setting", "Brought in knowledge keeper support for CHWs", "Advisory Circle: Fireweed describes it as 'Indigenous and allied service providers'"],
+      open: "I want to be direct: I'm not Indigenous, and I think the right question is how I use this role to make more room for Indigenous people, not less." },
+    { q: "What do cultural safety, self-determination and OCAP® look like day to day in a research project?",
+      why: "The posting names these explicitly. They want practice, not definitions.",
+      how: ["Cultural safety is judged by the person receiving care or taking part, not the provider. Give a Fireweed example: the template letter for taking products of conception home, or smudging in procedural abortion.", "OCAP® (Ownership, Control, Access, Possession; FNIGC): data sharing agreements before collection, community review of findings before publication, deciding together where data is stored, and attention to how this works inside a hospital's privacy rules.", "Self-determination: participants choose how they take part; partners set priorities; findings go back to community first.", "Mention TCPS 2 Chapter 9 and that you're adapting to Métis and Inuit contexts too (OCAP® is a First Nations framework)."],
+      ev: ["17 culturally safe interviews for Dion Fletcher", "Call Auntie operations", "Taught Social Justice in Midwifery"],
+      open: "To me cultural safety is defined by the person on the receiving end, so in research it shows up in very practical choices." },
+    { q: "Describe your experience working within Indigenous community-led research.",
+      why: "This is the cover-letter prompt, so they'll probably ask it directly.",
+      how: ["Lead with the Dion Fletcher study: scope, your role, how you approached consent and relationship.", "Add the Fireweed Advisory Circle: what you contributed and what you learned about how this team works.", "Add Call Auntie as community-led service delivery that research builds on.", "Close with what you learned, for example about pace and relational time."],
+      ev: ["2023 RA: all 17 semi-structured interviews", "Advisory Circle", "Call Auntie 2024–present"],
+      open: "My most direct experience was in 2023, when I did all seventeen interviews for Claire Dion Fletcher's study of an Indigenous-led midwife hospitalist team." },
+    { q: "How would you build reciprocal relationships with partners across the country, for example ekw'í7tl in Vancouver?",
+      why: "The role leads in-person activities and national relationships. Reciprocity has to be concrete.",
+      how: ["Show up before you need something. Visit in person, follow protocols, bring gifts where appropriate.", "Reciprocity in practice: honoraria paid on time, capacity funding, co-authorship and co-presenting, sharing tools back.", "Meet each partner where they are: ekw'í7tl's current focus is training and education, so be flexible."],
+      ev: ["National partnerships at Action Canada (CART, LEAF)", "Advisory Circle member"],
+      open: "Reciprocity for me starts with showing up before I need anything, and with paying people well and on time." },
+    { q: "Tell us about a time you made a mistake in a cross-cultural relationship, or caused harm, and how you repaired it.",
+      why: "Accountability and humility. Saying 'never' is a red flag.",
+      how: ["Choose a real, modest example. Own it without over-explaining.", "Show the repair: you listened, acknowledged it, changed the practice, and followed up.", "Say what you do differently now."],
+      ev: ["Draw from Call Auntie, TRCC or Action Canada"],
+      open: "Yes. One that stays with me is…" }
+  ]},
+  { group: "Running the project", items: [
+    { q: "The core deliverable is a culturally safe abortion support hotline. What would you bring?",
+      why: "This is where you stand out. Make it concrete.",
+      how: ["Operations: scheduling and coverage, call protocols, escalation and safety plans, after-hours plans, data capture that doesn't burden callers.", "People: recruiting, training and supervising navigators, and debriefs to prevent vicarious trauma.", "Learning: a case management system you set up and trained people on.", "Name what's different here: Indigenous navigators, cultural protocols, aftercare and spiritual support, and Call Auntie's own hotline history."],
+      ev: ["Access Line: about 6,000 calls/yr, 7 staff, 15 volunteers", "TRCC: 24/7, 200+ volunteers, 3,000+ callers/yr, a rebuilt 52-hour training", "CaseWORKS at Call Auntie"],
+      open: "I've run two lines: Action Canada's Access Line and TRCC's 24/7 crisis line. The infrastructure is familiar. What I'd want to learn from partners is what makes a line culturally safe." },
+    { q: "Walk us through your first 90 days.",
+      why: "Can you take over quickly without bulldozing?",
+      how: ["Days 1–30: listen. Meet each partner and the Advisory Circle, read the protocol, grant and budget, finish TCPS 2, learn UHT systems.", "Days 31–60: build. A project plan and timeline, a budget tracker, an honoraria process, steering committee terms of reference, REB status.", "Days 61–90: deliver. First steering committee meeting with clear decisions, a navigator hiring plan, evaluation design workshops with partners."],
+      ev: ["Built management infrastructure at Call Auntie", "Set up new roles and an M&E plan at Action Canada"],
+      open: "The first month would be mostly listening, with the partners, with you, and with the paperwork." },
+    { q: "How would you support the design and delivery of an Indigenous-led evaluation?",
+      why: "Evaluation is a named component, with Auger and Pérez Piñán involved.",
+      how: ["Community defines success. Co-design indicators with partners and navigators.", "Mixed methods: call data from the case management system, caller feedback, and conversations or stories.", "Strengths-based and relational: evaluate the hotline, not the callers.", "Your role is coordination: logistics, data quality, timelines, and making sure findings go back to community."],
+      ev: ["Monitoring and evaluation plan at Action Canada", "CHW wellness and workload evaluation at Call Auntie", "Fireweed's participatory DEPICT analysis"],
+      open: "I'd see my job as making it easy for community to define what success looks like, and then making sure we collect that well." },
+    { q: "How would you manage ethics, REB submissions and data governance at a hospital?",
+      why: "Protocols and Indigenous data governance are named duties. This is a gap to bridge.",
+      how: ["Be honest: you've worked under REB protocols as an RA and in your MA. Leading submissions is where you'll ramp up quickly.", "Show you know the pieces: UHT REB, amendments, consent forms, renewals, adverse event reporting, privacy (PHIPA), and data sharing agreements alongside OCAP®.", "Mention you've finished (or will finish) TCPS 2 CORE."],
+      ev: ["IMPACT, NICE and Dion Fletcher studies", "Managed sensitive information on crisis and access lines"],
+      open: "I've worked under REB protocols on several studies, and I'm eager to own the submissions end to end." },
+    { q: "Tell us about your experience with qualitative and quantitative data collection and analysis.",
+      why: "The posting covers both, plus software.",
+      how: ["Qualitative: interview guides, 17 interviews, ethnography, coding.", "Quantitative: seven years at Market Strategies International as interviewer, coder, QA supervisor and project supervisor; survey QA and data cleaning.", "Tools: REDCap, Excel, the CaseWORKS setup. NVivo: say you'll be fluent quickly."],
+      ev: ["Market Strategies, 2003–2010", "IMPACT study recruiter (Dennis)", "NICE recruitment coordinator (McDonald)"],
+      open: "My research path started in survey research, which people don't always expect." },
+    { q: "Tell us about managing a budget, and about paying honoraria or participant payments.",
+      why: "The posting stresses budgets, honoraria on time, and financial reports for funders.",
+      how: ["Give the $1.2M figure precisely: what it covered and how you tracked it.", "Honoraria: low-barrier options (e-transfer, cash, gift cards), paying promptly, respecting privacy, following UHT policy, keeping a clean audit trail.", "Explain why it matters: late honoraria break trust with community."],
+      ev: ["$1.2M Health Canada grant", "$100K Shoppers grant", "Knowledge keeper and volunteer payments, if relevant"],
+      open: "For me paying honoraria on time is a relationship issue, not only an admin task." },
+    { q: "This role is 20% new proposals and grants. Tell us about a proposal you've written.",
+      why: "Can you help Renée grow the program?",
+      how: ["Use the Shoppers $100K: the need, your approach, the result.", "Show you can draft protocols, gather partner input and meet deadlines.", "Show interest in where the program could go next (for example, Métis-specific work)."],
+      ev: ["$100K Shoppers Foundation for Women's Health", "Your published chapter"],
+      open: "At Action Canada I led a proposal that brought in $100K to connect underserved people to SRH care, including abortion." },
+    { q: "How would you coordinate the steering committee and the Advisory Circle?",
+      why: "You've been a member, so draw on that.",
+      how: ["From the member's side: materials early, plain language, short asks, honoraria, and showing how input was used.", "Mechanics: terms of reference, agendas, minutes, decision logs, accessible scheduling across time zones, hybrid options.", "Chair with care: opening protocols, making space for quieter voices."],
+      ev: ["Fireweed Advisory Circle member"],
+      open: "Having sat in the Circle, I know the difference between being consulted and being in relationship." }
+  ]},
+  { group: "Leadership and team", items: [
+    { q: "How do you lead and support RAs, navigators, students and trainees?",
+      why: "25% of the role is guidance and supervision.",
+      how: ["Relational leadership: regular check-ins, clear expectations, growth plans.", "Training: you've designed curricula at scale.", "Unionized workplace experience, and performance plans done with care."],
+      ev: ["6 CHWs at Call Auntie", "7 staff and 15 volunteers on the Access Line", "200+ TRCC volunteers", "Hired 4 staff at Call Auntie and created 2 roles at Action Canada"],
+      open: "I lead relationally, and I also believe kindness includes being clear." },
+    { q: "Tell us about resolving a conflict between staff, or between staff and a partner.",
+      why: "The posting names conflict resolution between staff and stakeholders.",
+      how: ["Use a real example. Listen first, name the interests, find the shared goal.", "Show repair and follow-through.", "If it involved a partner: respect their authority and keep the relationship first."],
+      ev: ["The CHW workload work at Call Auntie may fit"],
+      open: "A situation that comes to mind is…" },
+    { q: "This work carries heavy emotional material. How do you protect wellbeing, yours and the team's?",
+      why: "Hotline and abortion support work brings vicarious trauma.",
+      how: ["Structures, not just encouragement: debriefs, manageable caseloads, rotation, paid wellness time.", "Cultural supports: access to knowledge keepers and ceremony.", "Your own practices, briefly."],
+      ev: ["Brought in knowledge keeper support at Call Auntie", "TRCC trauma-informed practice"],
+      open: "I learned at TRCC that wellness has to be built into the structure of the work, not left to each person." }
+  ]},
+  { group: "Subject matter", items: [
+    { q: "What are the biggest barriers to abortion access for Indigenous people in Canada?",
+      why: "Have you engaged with Fireweed's findings?",
+      how: ["Cite Fireweed: logistical barriers, poor treatment, stigma, colonialism's effects, the importance of traditional knowledge, and missing follow-up care.", "Connect to the history: coerced sterilization (now criminalized under Bill S-228), birth alerts, mistrust.", "Connect to your chapter: legal doesn't mean accessible; intersecting politics of citizenship, race, gender and class.", "Bring Tracker data: few provinces have centralized referral."],
+      ev: ["Ch. 13", "Abortion Access Tracker", "Access Line callers"],
+      open: "Fireweed's work showed that the barriers aren't only distance; they're tied to colonialism, and what's missing most is support afterwards." },
+    { q: "What does reproductive justice mean to you, and how is it different from a choice framework?",
+      why: "The posting names a commitment to reproductive justice.",
+      how: ["Credit SisterSong (Black women, 1994): the right to have children, not to have children, and to parent in safe communities, plus bodily autonomy.", "For Indigenous communities: self-determination, land, culture, and community-based reproduction and birth.", "Your chapter argues for moving 'from abortion rights to reproductive justice.'"],
+      ev: ["Ch. 13", "Body Wise: gender-expansive, anti-oppressive practice"],
+      open: "Choice assumes options exist. Reproductive justice asks who actually has them." },
+    { q: "What's happening in reproductive health policy right now that matters for this project?",
+      why: "Can you place the work in context and spot risks and opportunities?",
+      how: ["Funding: the SRH Fund was cut, then partly restored (2026).", "Pharmacare contraception deals have stalled, and Ontario has none.", "Mifepristone access is uneven; travel costs aren't covered.", "Bill S-228 passed. Say what each means for the hotline."],
+      ev: ["Action Canada policy experience"],
+      open: "A few things affect a hotline directly…" }
+  ]},
+  { group: "Communication and closing", items: [
+    { q: "How would you support community partners to co-present or lead presentations?",
+      why: "Knowledge sharing should centre community voice.",
+      how: ["Offer support without taking over: slide templates, rehearsal, honoraria and travel covered, partners choose their role.", "Show your teaching and training background."],
+      ev: ["TMU lecturer", "Training curricula", "Body Wise workshops", "Pocket Guide and Tracker content"],
+      open: "My job would be to make the stage easy to step onto, then step back." },
+    { q: "This is a two-year term. Where do you want to grow?",
+      why: "Commitment and fit.",
+      how: ["Commit to the term.", "Name growth that serves the project: leading REB work, evaluation, co-authorship."],
+      ev: [],
+      open: "I want to see the hotline go from plan to people picking up the phone." },
+    { q: "Is there anything else you'd like us to know?",
+      why: "Your closing pitch.",
+      how: ["Three points: relationship (Circle, Call Auntie), hotline experience, research background.", "Thank them, and acknowledge the partners' time."],
+      ev: [],
+      open: "Just that I'd be honoured to help build this, and that I already care about the people in this room." }
+  ]}
+];
+
+(function () {
+  const KEY = "laura-fireweed-practiced";
+  const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "{}"); } catch (e) { return {}; } };
+  const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  const done = read(KEY);
+  const list = document.getElementById("qlist");
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let n = 0, total = 0;
+  QUESTIONS.forEach((g) => {
+    const wrap = document.createElement("div");
+    wrap.className = "q-group";
+    wrap.innerHTML = "<h3>" + esc(g.group) + "</h3>";
+    g.items.forEach((it) => {
+      n++; total++;
+      const id = "q" + n;
+      const d = document.createElement("details");
+      d.className = "q" + (done[id] ? " done" : "");
+      d.id = id;
+      d.innerHTML =
+        '<summary><span class="qn">Q' + n + '</span><span class="qt">' + esc(it.q) + '</span><span class="chev" aria-hidden="true">›</span></summary>' +
+        '<div class="q-body">' +
+          '<div><h4>Why they ask</h4><p>' + esc(it.why) + '</p></div>' +
+          '<div><h4>How to approach it</h4><ul>' + it.how.map((h) => "<li>" + esc(h) + "</li>").join("") + '</ul></div>' +
+          (it.ev.length ? '<div><h4>Your evidence</h4><ul>' + it.ev.map((h) => "<li>" + esc(h) + "</li>").join("") + '</ul></div>' : "") +
+          '<div><h4>A first line</h4><p class="opener">' + esc(it.open) + '</p></div>' +
+          '<label><input type="checkbox" id="' + id + '-done"' + (done[id] ? " checked" : "") + '> Practiced out loud</label>' +
+        '</div>';
+      d.querySelector("input").addEventListener("change", (e) => {
+        done[id] = e.target.checked; if (!e.target.checked) delete done[id];
+        d.classList.toggle("done", e.target.checked);
+        write(KEY, done); progress();
+      });
+      wrap.appendChild(d);
+    });
+    list.appendChild(wrap);
+  });
+  function progress() {
+    const c = Object.keys(done).filter((k) => /^q\d+$/.test(k)).length;
+    document.getElementById("progress").textContent = c + " of " + total + " practiced";
+  }
+  progress();
+  document.getElementById("expand-all").addEventListener("click", () => list.querySelectorAll("details").forEach((d) => d.open = true));
+  document.getElementById("collapse-all").addEventListener("click", () => list.querySelectorAll("details").forEach((d) => d.open = false));
+
+  const CK = "laura-fireweed-checklist";
+  const ck = read(CK);
+  document.querySelectorAll("#checklist-items input").forEach((box) => {
+    box.checked = !!ck[box.id];
+    box.addEventListener("change", () => { ck[box.id] = box.checked; write(CK, ck); });
+  });
+})();
+</script>
+</body>
+</html>
