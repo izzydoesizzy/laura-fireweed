@@ -47,7 +47,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0; background: var(--ground); color: var(--ink);
-  font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  font-family: var(--body); font-size: 1rem; line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--fireweed); text-underline-offset: 2px; }
@@ -179,6 +179,10 @@ details.q.done .qn::after { content: " ✓"; color: var(--stem); }
 .email-body li + li { margin-top: 0; }
 .ph { background: var(--ember-tint); color: var(--ember); border-radius: 3px; padding: 0 .2rem; }
 .copied { font-family: var(--ui); font-size: .82rem; color: var(--stem); }
+/* One size for all running text in the email sections */
+.followup .small, .followup .panel-note, .followup .section-head p, .followup .callout,
+.followup .email-head, .followup .email-head b, .followup .email-body,
+.followup .tab, .followup .btn { font-size: 1rem; }
 
 /* Checklist */
 ul.check { list-style: none; padding: 0; display: grid; gap: .5rem; }
