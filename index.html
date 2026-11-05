@@ -180,6 +180,8 @@ details.q.done .qn::after { content: " ✓"; color: var(--stem); }
 .email-body li + li { margin-top: 0; }
 .ph { background: var(--ember-tint); color: var(--ember); border-radius: 3px; padding: 0 .2rem; }
 .copied { font-family: var(--ui); font-size: .82rem; color: var(--stem); }
+.version { display: grid; gap: .8rem; }
+.version + .version { margin-top: 2.2rem; }
 /* One size for all running text in the email sections */
 .followup .small, .followup .panel-note, .followup .section-head p, .followup .callout,
 .followup .email-head, .followup .email-head b, .followup .email-body,
@@ -243,29 +245,58 @@ footer { padding-block: 2rem 3rem; border-top: 1px solid var(--rule); font-size:
 <section id="offer" class="followup">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Offer stage · Draft</span>
+      <span class="eyebrow">Offer stage · Drafts</span>
       <h2>Offer response email</h2>
       <p>To Selma Ergun, cc Renée Monchalin.</p>
     </div>
-    <div class="email">
-      <div class="email-head"><span><b>Subject</b>Research Coordinator III offer: excited to join + base rate</span><span><button class="btn copy" type="button" data-target="body-offer">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
-      <div class="email-body" id="body-offer">
-        <p>Hi Renée and Selma,</p>
-        <p>Thank you so much for the offer to join the MAP Centre as Research Coordinator III! I'm really looking forward to accepting and getting started on November 30. I'm thrilled to help build Phase 2 of Fireweed, from the national hotline to the partnerships behind it.</p>
-        <p>I'd like to explore a revision of the offer to make sure we're set up well for a strong and enduring working relationship. Here's a quick recap of what I'd bring to the role beginning day one:</p>
-        <p><b>Key Qualifications &amp; Fit</b></p>
-        <ul>
-          <li><b>Deep Roots in Fireweed:</b> Advisory Circle member, contributor to this phase's grant submission, and author of a chapter on Fireweed's Continued Learning page.</li>
-          <li><b>Hotline Leadership:</b> Ran Action Canada's national Access Line (~6,000 calls a year) and TRCC's 24/7 crisis line (200+ volunteers), the same model as Phase 2's hotline and navigators.</li>
-          <li><b>Existing Partner Relationships:</b> Manager of Community Operations at Call Auntie, former Director of Health Promotion at Action Canada, and partner work with Abortion Care Canada and the SOGC.</li>
-          <li><b>Budgets &amp; Grants:</b> Managed a $1.2M Health Canada grant and secured $100K from the Shoppers Foundation.</li>
-          <li><b>Research &amp; Ethics:</b> MA from U of T. Took my own study from ethics review to publication, and conducted 17 interviews for an Indigenous-led midwifery study.</li>
-        </ul>
-        <p><b>Compensation Alignment</b></p>
-        <p>In the spirit of starting a really strong relationship together, and given how uniquely qualified and connected I am to this work, my target base rate for this role is $59.03 per hour, the top of the posted range.</p>
-        <p>I'd be happy to hop on a call to talk it through, or to keep things over email if that's easier. In the meantime, I look forward to completing the criminal record check.</p>
-        <p>Thank you again. I can't wait to get started!</p>
-        <p>Warmly,<br>Laura</p>
+    <div class="version">
+      <h3>Version 1: Current</h3>
+      <div class="email">
+        <div class="email-head"><span><b>Subject</b>Research Coordinator III offer: excited to join + base rate</span><span><button class="btn copy" type="button" data-target="body-offer">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
+        <div class="email-body" id="body-offer">
+          <p>Hi Renée and Selma,</p>
+          <p>Thank you so much for the offer to join the MAP Centre as Research Coordinator III! I'm really looking forward to accepting and getting started on November 30. I'm thrilled to help build Phase 2 of Fireweed, from the national hotline to the partnerships behind it.</p>
+          <p>I'd like to explore a revision of the offer to make sure we're set up well for a strong and enduring working relationship. Here's a quick recap of what I'd bring to the role beginning day one:</p>
+          <p><b>Key Qualifications &amp; Fit</b></p>
+          <ul>
+            <li><b>Deep Roots in Fireweed:</b> Advisory Circle member, contributor to this phase's grant submission, and author of a chapter on Fireweed's Continued Learning page.</li>
+            <li><b>Hotline Leadership:</b> Ran Action Canada's national Access Line (~6,000 calls a year) and TRCC's 24/7 crisis line (200+ volunteers), the same model as Phase 2's hotline and navigators.</li>
+            <li><b>Existing Partner Relationships:</b> Manager of Community Operations at Call Auntie, former Director of Health Promotion at Action Canada, and partner work with Abortion Care Canada and the SOGC.</li>
+            <li><b>Budgets &amp; Grants:</b> Managed a $1.2M Health Canada grant and secured $100K from the Shoppers Foundation.</li>
+            <li><b>Research &amp; Ethics:</b> MA from U of T. Took my own study from ethics review to publication, and conducted 17 interviews for an Indigenous-led midwifery study.</li>
+          </ul>
+          <p><b>Compensation Alignment</b></p>
+          <p>In the spirit of starting a really strong relationship together, and given how uniquely qualified and connected I am to this work, my target base rate for this role is $59.03 per hour, the top of the posted range.</p>
+          <p>I'd be happy to hop on a call to talk it through, or to keep things over email if that's easier. In the meantime, I look forward to completing the criminal record check.</p>
+          <p>Thank you again. I can't wait to get started!</p>
+          <p>Warmly,<br>Laura</p>
+        </div>
+      </div>
+    </div>
+    <div class="version">
+      <h3>Version 2: With a project management note</h3>
+      <div class="email">
+        <div class="email-head"><span><b>Subject</b>Research Coordinator III offer: excited to join + base rate</span><span><button class="btn copy" type="button" data-target="body-offer-pm">Copy email</button> <span class="copied" aria-live="polite"></span></span></div>
+        <div class="email-body" id="body-offer-pm">
+          <p>Hi Renée and Selma,</p>
+          <p>Thank you so much for the offer to join the MAP Centre as Research Coordinator III! I'm really looking forward to accepting and getting started on November 30. I'm thrilled to help build Phase 2 of Fireweed, from the national hotline to the partnerships behind it.</p>
+          <p>I'd like to explore a revision of the offer to make sure we're set up well for a strong and enduring working relationship. Here's a quick recap of what I'd bring to the role beginning day one:</p>
+          <p><b>Key Qualifications &amp; Fit</b></p>
+          <ul>
+            <li><b>Deep Roots in Fireweed:</b> Advisory Circle member, contributor to this phase's grant submission, and author of a chapter on Fireweed's Continued Learning page.</li>
+            <li><b>Hotline Leadership:</b> Ran Action Canada's national Access Line (~6,000 calls a year) and TRCC's 24/7 crisis line (200+ volunteers), the same model as Phase 2's hotline and navigators.</li>
+            <li><b>Existing Partner Relationships:</b> Manager of Community Operations at Call Auntie, former Director of Health Promotion at Action Canada, and partner work with Abortion Care Canada and the SOGC.</li>
+            <li><b>Budgets &amp; Grants:</b> Managed a $1.2M Health Canada grant and secured $100K from the Shoppers Foundation.</li>
+            <li><b>Research &amp; Ethics:</b> MA from U of T. Took my own study from ethics review to publication, and conducted 17 interviews for an Indigenous-led midwifery study.</li>
+          </ul>
+          <p><b>A Note on Project Management Experience</b></p>
+          <p>My resume lists 6+ years of program management across Call Auntie, Action Canada and the Toronto Rape Crisis Centre. Adding the research projects I led from start to finish (my MA study, project supervision at Market Strategies International, and recruitment for the NICE and IMPACT studies), I bring 8+ years of hands-on project management.</p>
+          <p><b>Compensation Alignment</b></p>
+          <p>In the spirit of starting a really strong relationship together, and given how uniquely qualified and connected I am to this work, my target base rate for this role is $59.03 per hour, the top of the posted range.</p>
+          <p>I'd be happy to hop on a call to talk it through, or to keep things over email if that's easier. In the meantime, I look forward to completing the criminal record check.</p>
+          <p>Thank you again. I can't wait to get started!</p>
+          <p>Warmly,<br>Laura</p>
+        </div>
       </div>
     </div>
   </div>
